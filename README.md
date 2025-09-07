@@ -1,4 +1,4 @@
-````markdown
+
 # 🌟 TestMove – WorkGem + Karma + MicroLoan dApp
 
 A decentralized application on **Aptos** that verifies work history (**WorkGem**), builds reputation (**Karma Score**), and enables **micro-loans** for employees. This system combines **Move smart contracts**, an **AI/ML oracle**, and a **React frontend**.
