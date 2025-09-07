@@ -1,5 +1,3 @@
-To give you a downloadable `README.md` file, I need to provide the content as a text block that you can copy and paste into a file on your computer. Simply save the content below into a new file named `README.md`.
-
 ````markdown
 # 🌟 TestMove – WorkGem + Karma + MicroLoan dApp
 
