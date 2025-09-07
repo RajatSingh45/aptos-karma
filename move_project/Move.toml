@@ -1,0 +1,11 @@
+[package]
+name = "move_project"
+version = "0.0.0"
+
+[dependencies]
+AptosFramework = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-framework", rev = "testnet" }
+
+[addresses]
+company = "0xa36ca6f19a99d717ef81d4b1041237ada7715de59bc0ad0343b5ec36044c89c8"  # ← USE YOUR REAL ADDRESS
+std = "0x1"
+aptos_framework = "0x1"
