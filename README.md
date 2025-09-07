@@ -1,23 +1,23 @@
-# 🌟 WorkGem + MicroLoanPool on Aptos  
+# 🌟 TestMove – WorkGem + Karma + MicroLoan dApp  
 
-🚀 **WorkGem** is a blockchain-powered proof-of-work and microfinance solution built on **Aptos (Move)**.  
-Employees earn verifiable **WorkGems** for tasks completed, track their **Karma Score**, and access **micro-loans** based on reputation.  
+🚀 A decentralized application on **Aptos** that verifies work history (**WorkGem**), builds reputation (**Karma Score**), and enables **micro-loans** for employees.  
+The system combines **Move smart contracts**, an **AI/ML oracle**, and a **React frontend**.  
 
 ---
 
 ## ✨ Features  
-- 🪙 WorkGems as Proof of Work  
-- 📊 Karma Passport (AI-powered reputation)  
-- 💰 MicroLoan Pool (trust-based lending)  
-- 🖥 Employee, Company & Loan Provider Dashboards  
-- 🔗 On-Chain Verifiability with Aptos  
+- 🪙 **WorkGems as Proof of Work** – Employees earn gems for verified tasks.  
+- 📊 **Karma Passport** – AI-powered reputation scoring.  
+- 💰 **MicroLoan Pool** – Access small loans based on trust & XP earned.  
+- 🖥 **Role-Based Dashboards** – Employee, Company & Loan Provider views.  
+- 🔗 **On-Chain Verifiability** – All WorkGems stored immutably on Aptos blockchain.  
 
 ---
 
 ## 📂 Project Structure  
 
 test_move/
-├── README.md # 📖 Root documentation (integration steps, setup guide)
+├── README.md # 📖 Root documentation (setup + integration guide)
 │
 ├── move_project/ # ⚡ Blockchain Smart Contracts (Move)
 │ ├── Move.toml
@@ -74,19 +74,91 @@ Copy code
 
 ---
 
-## 📸 Screenshots  
+## 🚀 Quick Start  
 
-### 🏠 Employee Dashboard  
-<img src="screenshots/karma_passport.jpg" alt="Karma Passport" width="800"/>  
+### 1️⃣ Setup Move Contracts  
+```bash
+cd move_project
+aptos move compile
+aptos move publish --profile default
+Contracts:
 
-### 💰 Loan Request Flow  
-<img src="screenshots/loan_request.jpg" alt="Loan Request" width="800"/>  
-<img src="screenshots/submitting_transaction.jpg" alt="Submitting Transaction" width="800"/>  
-<img src="screenshots/loan_approved.jpg" alt="Loan Approved" width="800"/>  
+work_gem.move → Work verification
 
----
+karma_score.move → Reputation logic
 
-## 👨‍💻 Contributors  
-- [**Rajat Singh**](https://github.com/RajatSingh45) – Full Stack + Blockchain Developer  
-- [**Agnik Paul**](https://github.com/Agnik47) – Frontend Developer  
-- [**Soumyadeep Sarkar**](https://github.com/Soumyadeep143) – AI/ML Engineer  
+micro_loan.move → Loan pool management
+
+2️⃣ Run the Oracle Service (AI/ML)
+bash
+Copy code
+cd oracle_service
+python -m venv venv
+source venv/bin/activate  # (or venv\Scripts\activate on Windows)
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
+API Endpoints:
+
+GET /health → Health check
+
+POST /karma_score → Returns ML-calculated karma score
+
+3️⃣ Start the Frontend
+bash
+Copy code
+cd frontend
+npm install
+npm run dev
+Frontend Features:
+
+Employee Passport with WorkGems
+
+Company Dashboard to issue gems
+
+Loan Provider Dashboard to approve/reject micro-loans
+
+Integration with Aptos contracts + ML Oracle
+
+4️⃣ Demo Flow (Optional)
+End-to-end script (contracts → oracle → frontend):
+
+bash
+Copy code
+cd scripts
+bash deploy.sh
+node demo_flow.js
+⚡ Tech Stack
+Blockchain: Aptos + Move
+
+Backend: FastAPI (ML Oracle)
+
+Frontend: React + Tailwind + ts-sdk
+
+Integration: Aptos SDK + REST API
+
+🛠 Helper Scripts
+deploy.sh → Compile & publish contracts
+
+demo_flow.js → Demo flow (WorkGem → Karma → Loan)
+
+check_store.js → Query on-chain WorkGemStore
+
+📌 Notes
+Update frontend/src/config.ts with your published contract address and API base URL.
+
+oracle_service/convert_pubkey.py handles Aptos key conversion if required.
+
+Use aptos account fund-with-faucet --account <addr> to fund test accounts on devnet.
+
+👨‍💻 Contributors
+Rajat Singh – Full Stack + Blockchain Developer
+
+Agnik Paul – Frontend Developer
+
+Soumyadeep Sarkar – AI/ML Engineer
+
+📜 License
+MIT – feel free to fork and build on top of this.
+
+yaml
+Copy code
